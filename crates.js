@@ -1,0 +1,1 @@
+window.ALL_CRATES = ["karyon_core","karyon_jsonrpc","karyon_net","karyon_p2p"];

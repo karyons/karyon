@@ -1,0 +1,3 @@
+(function() {var implementors = {
+"karyon_p2p":[["impl <a class=\"trait\" href=\"karyon_core/event/trait.EventValue.html\" title=\"trait karyon_core::event::EventValue\">EventValue</a> for <a class=\"enum\" href=\"karyon_p2p/protocol/enum.ProtocolEvent.html\" title=\"enum karyon_p2p::protocol::ProtocolEvent\">ProtocolEvent</a>"]]
+};if (window.register_implementors) {window.register_implementors(implementors);} else {window.pending_implementors = implementors;}})()

@@ -1,0 +1,89 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="The Protocol trait defines the interface for core protocols and custom protocols."><title>Protocol in karyon_p2p::protocol - Rust</title><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/SourceSerif4-Regular-46f98efaafac5295.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/FiraSans-Regular-018c141bf0843ffd.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/FiraSans-Medium-8f9a781e4970d388.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/SourceCodePro-Regular-562dcc5011b6de7d.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/SourceSerif4-Bold-a2c9cd1067f8b328.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/SourceCodePro-Semibold-d899c5a5c4aeb14a.ttf.woff2"><link rel="stylesheet" href="../../static.files/normalize-76eba96aa4d2e634.css"><link rel="stylesheet" href="../../static.files/rustdoc-fa3bb1812debf86c.css"><meta name="rustdoc-vars" data-root-path="../../" data-static-root-path="../../static.files/" data-current-crate="karyon_p2p" data-themes="" data-resource-suffix="" data-rustdoc-version="1.74.1 (a28077b28 2023-12-04)" data-channel="1.74.1" data-search-js="search-8be46b629f5f14a8.js" data-settings-js="settings-74424d7eec62a23e.js" ><script src="../../static.files/storage-fec3eaa3851e447d.js"></script><script defer src="sidebar-items.js"></script><script defer src="../../static.files/main-c5bd66d33317d69f.js"></script><noscript><link rel="stylesheet" href="../../static.files/noscript-5d8b3c7633ad77ba.css"></noscript><link rel="alternate icon" type="image/png" href="../../static.files/favicon-16x16-8b506e7a72182f1c.png"><link rel="alternate icon" type="image/png" href="../../static.files/favicon-32x32-422f7d1d52889060.png"><link rel="icon" type="image/svg+xml" href="../../static.files/favicon-2c020d218678b618.svg"></head><body class="rustdoc trait"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]--><nav class="mobile-topbar"><button class="sidebar-menu-toggle">&#9776;</button><a class="logo-container" href="../../karyon_p2p/index.html"><img class="rust-logo" src="../../static.files/rust-logo-151179464ae7ed46.svg" alt="logo"></a></nav><nav class="sidebar"><a class="logo-container" href="../../karyon_p2p/index.html"><img class="rust-logo" src="../../static.files/rust-logo-151179464ae7ed46.svg" alt="logo"></a><h2 class="location"><a href="#">Protocol</a></h2><div class="sidebar-elems"><section><h3><a href="#required-methods">Required Methods</a></h3><ul class="block"><li><a href="#tymethod.id">id</a></li><li><a href="#tymethod.start">start</a></li><li><a href="#tymethod.version">version</a></li></ul><h3><a href="#implementors">Implementors</a></h3></section><h2><a href="index.html">In karyon_p2p::protocol</a></h2></div></nav><main><div class="width-limiter"><nav class="sub"><form class="search-form"><span></span><input class="search-input" name="search" aria-label="Run search in the documentation" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../static.files/wheel-7b819b6101059cd0.svg"></a></div></form></nav><section id="main-content" class="content"><div class="main-heading"><h1>Trait <a href="../index.html">karyon_p2p</a>::<wbr><a href="index.html">protocol</a>::<wbr><a class="trait" href="#">Protocol</a><button id="copy-path" title="Copy item path to clipboard"><img src="../../static.files/clipboard-7571035ce49a181d.svg" width="19" height="18" alt="Copy item path"></button></h1><span class="out-of-band"><a class="src" href="../../src/karyon_p2p/protocol.rs.html#104-117">source</a> · <button id="toggle-all-docs" title="collapse all docs">[<span>&#x2212;</span>]</button></span></div><pre class="rust item-decl"><code>pub trait Protocol: <a class="trait" href="https://doc.rust-lang.org/1.74.1/core/marker/trait.Send.html" title="trait core::marker::Send">Send</a> + <a class="trait" href="https://doc.rust-lang.org/1.74.1/core/marker/trait.Sync.html" title="trait core::marker::Sync">Sync</a> {
+    // Required methods
+    fn <a href="#tymethod.start" class="fn">start</a>&lt;'async_trait&gt;(
+        self: <a class="struct" href="https://doc.rust-lang.org/1.74.1/alloc/sync/struct.Arc.html" title="struct alloc::sync::Arc">Arc</a>&lt;Self&gt;
+    ) -&gt; <a class="struct" href="https://doc.rust-lang.org/1.74.1/core/pin/struct.Pin.html" title="struct core::pin::Pin">Pin</a>&lt;<a class="struct" href="https://doc.rust-lang.org/1.74.1/alloc/boxed/struct.Box.html" title="struct alloc::boxed::Box">Box</a>&lt;dyn <a class="trait" href="https://doc.rust-lang.org/1.74.1/core/future/future/trait.Future.html" title="trait core::future::future::Future">Future</a>&lt;Output = <a class="enum" href="https://doc.rust-lang.org/1.74.1/core/result/enum.Result.html" title="enum core::result::Result">Result</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/1.74.1/std/primitive.unit.html">()</a>, <a class="enum" href="../error/enum.Error.html" title="enum karyon_p2p::error::Error">Error</a>&gt;&gt; + <a class="trait" href="https://doc.rust-lang.org/1.74.1/core/marker/trait.Send.html" title="trait core::marker::Send">Send</a> + 'async_trait&gt;&gt;
+       <span class="where">where Self: 'async_trait</span>;
+<span class="item-spacer"></span>    fn <a href="#tymethod.version" class="fn">version</a>() -&gt; <a class="enum" href="https://doc.rust-lang.org/1.74.1/core/result/enum.Result.html" title="enum core::result::Result">Result</a>&lt;<a class="struct" href="../version/struct.Version.html" title="struct karyon_p2p::version::Version">Version</a>, <a class="enum" href="../error/enum.Error.html" title="enum karyon_p2p::error::Error">Error</a>&gt;
+       <span class="where">where Self: <a class="trait" href="https://doc.rust-lang.org/1.74.1/core/marker/trait.Sized.html" title="trait core::marker::Sized">Sized</a></span>;
+<span class="item-spacer"></span>    fn <a href="#tymethod.id" class="fn">id</a>() -&gt; <a class="type" href="type.ProtocolID.html" title="type karyon_p2p::protocol::ProtocolID">ProtocolID</a>
+       <span class="where">where Self: <a class="trait" href="https://doc.rust-lang.org/1.74.1/core/marker/trait.Sized.html" title="trait core::marker::Sized">Sized</a></span>;
+}</code></pre><details class="toggle top-doc" open><summary class="hideme"><span>Expand description</span></summary><div class="docblock"><p>The Protocol trait defines the interface for core protocols
+and custom protocols.</p>
+<h2 id="example"><a href="#example">Example</a></h2>
+<div class="example-wrap"><pre class="rust rust-example-rendered"><code><span class="kw">use </span>std::sync::Arc;
+
+<span class="kw">use </span>async_trait::async_trait;
+<span class="kw">use </span>smol::Executor;
+
+<span class="kw">use </span>karyon_core::crypto::{KeyPair, KeyPairType};
+<span class="kw">use </span>karyon_p2p::{
+    protocol::{ArcProtocol, Protocol, ProtocolID, ProtocolEvent},
+    Backend, PeerID, Config, Version, P2pError, ArcPeer};
+
+<span class="kw">pub struct </span>NewProtocol {
+    peer: ArcPeer,
+}
+
+<span class="kw">impl </span>NewProtocol {
+    <span class="kw">fn </span>new(peer: ArcPeer) -&gt; ArcProtocol {
+        Arc::new(<span class="self">Self </span>{
+            peer,
+        })
+    }
+}
+
+<span class="attr">#[async_trait]
+</span><span class="kw">impl </span>Protocol <span class="kw">for </span>NewProtocol {
+    <span class="kw">async fn </span>start(<span class="self">self</span>: Arc&lt;<span class="self">Self</span>&gt;) -&gt; <span class="prelude-ty">Result</span>&lt;(), P2pError&gt; {
+        <span class="kw">let </span>listener = <span class="self">self</span>.peer.register_listener::&lt;<span class="self">Self</span>&gt;().<span class="kw">await</span>;
+        <span class="kw">loop </span>{
+            <span class="kw">let </span>event = listener.recv().<span class="kw">await</span>.unwrap();
+
+            <span class="kw">match </span>event {
+                ProtocolEvent::Message(msg) =&gt; {
+                    <span class="macro">println!</span>(<span class="string">&quot;{:?}&quot;</span>, msg);
+                }
+                ProtocolEvent::Shutdown =&gt; {
+                    <span class="kw">break</span>;
+                }
+            }
+        }
+
+        listener.cancel().<span class="kw">await</span>;
+        <span class="prelude-val">Ok</span>(())
+    }
+
+    <span class="kw">fn </span>version() -&gt; <span class="prelude-ty">Result</span>&lt;Version, P2pError&gt; {
+        <span class="string">&quot;0.2.0, &gt;0.1.0&quot;</span>.parse()
+    }
+
+    <span class="kw">fn </span>id() -&gt; ProtocolID {
+        <span class="string">&quot;NEWPROTOCOLID&quot;</span>.into()
+    }
+}
+
+ <span class="kw">async </span>{
+    <span class="kw">let </span>key_pair = KeyPair::generate(<span class="kw-2">&amp;</span>KeyPairType::Ed25519);
+    <span class="kw">let </span>config = Config::default();
+
+    <span class="comment">// Create a new Executor
+    </span><span class="kw">let </span>ex = Arc::new(Executor::new());
+
+    <span class="comment">// Create a new Backend
+    </span><span class="kw">let </span>backend = Backend::new(<span class="kw-2">&amp;</span>key_pair, config, ex);
+
+    <span class="comment">// Attach the NewProtocol
+    </span><span class="kw">let </span>c = <span class="kw">move </span>|peer| NewProtocol::new(peer);
+    backend.attach_protocol::&lt;NewProtocol&gt;(c).<span class="kw">await</span>.unwrap();
+ };
+</code></pre></div>
+</div></details><h2 id="required-methods" class="small-section-header">Required Methods<a href="#required-methods" class="anchor">§</a></h2><div class="methods"><details class="toggle method-toggle" open><summary><section id="tymethod.start" class="method"><a class="src rightside" href="../../src/karyon_p2p/protocol.rs.html#106">source</a><h4 class="code-header">fn <a href="#tymethod.start" class="fn">start</a>&lt;'async_trait&gt;(
+    self: <a class="struct" href="https://doc.rust-lang.org/1.74.1/alloc/sync/struct.Arc.html" title="struct alloc::sync::Arc">Arc</a>&lt;Self&gt;
+) -&gt; <a class="struct" href="https://doc.rust-lang.org/1.74.1/core/pin/struct.Pin.html" title="struct core::pin::Pin">Pin</a>&lt;<a class="struct" href="https://doc.rust-lang.org/1.74.1/alloc/boxed/struct.Box.html" title="struct alloc::boxed::Box">Box</a>&lt;dyn <a class="trait" href="https://doc.rust-lang.org/1.74.1/core/future/future/trait.Future.html" title="trait core::future::future::Future">Future</a>&lt;Output = <a class="enum" href="https://doc.rust-lang.org/1.74.1/core/result/enum.Result.html" title="enum core::result::Result">Result</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/1.74.1/std/primitive.unit.html">()</a>, <a class="enum" href="../error/enum.Error.html" title="enum karyon_p2p::error::Error">Error</a>&gt;&gt; + <a class="trait" href="https://doc.rust-lang.org/1.74.1/core/marker/trait.Send.html" title="trait core::marker::Send">Send</a> + 'async_trait&gt;&gt;<span class="where fmt-newline">where
+    Self: 'async_trait,</span></h4></section></summary><div class="docblock"><p>Start the protocol</p>
+</div></details><details class="toggle method-toggle" open><summary><section id="tymethod.version" class="method"><a class="src rightside" href="../../src/karyon_p2p/protocol.rs.html#109-111">source</a><h4 class="code-header">fn <a href="#tymethod.version" class="fn">version</a>() -&gt; <a class="enum" href="https://doc.rust-lang.org/1.74.1/core/result/enum.Result.html" title="enum core::result::Result">Result</a>&lt;<a class="struct" href="../version/struct.Version.html" title="struct karyon_p2p::version::Version">Version</a>, <a class="enum" href="../error/enum.Error.html" title="enum karyon_p2p::error::Error">Error</a>&gt;<span class="where fmt-newline">where
+    Self: <a class="trait" href="https://doc.rust-lang.org/1.74.1/core/marker/trait.Sized.html" title="trait core::marker::Sized">Sized</a>,</span></h4></section></summary><div class="docblock"><p>Returns the version of the protocol.</p>
+</div></details><details class="toggle method-toggle" open><summary><section id="tymethod.id" class="method"><a class="src rightside" href="../../src/karyon_p2p/protocol.rs.html#114-116">source</a><h4 class="code-header">fn <a href="#tymethod.id" class="fn">id</a>() -&gt; <a class="type" href="type.ProtocolID.html" title="type karyon_p2p::protocol::ProtocolID">ProtocolID</a><span class="where fmt-newline">where
+    Self: <a class="trait" href="https://doc.rust-lang.org/1.74.1/core/marker/trait.Sized.html" title="trait core::marker::Sized">Sized</a>,</span></h4></section></summary><div class="docblock"><p>Returns the unique ProtocolID associated with the protocol.</p>
+</div></details></div><h2 id="implementors" class="small-section-header">Implementors<a href="#implementors" class="anchor">§</a></h2><div id="implementors-list"><section id="impl-Protocol-for-PingProtocol" class="impl"><a class="src rightside" href="../../src/karyon_p2p/protocols/ping.rs.html#130-173">source</a><a href="#impl-Protocol-for-PingProtocol" class="anchor">§</a><h3 class="code-header">impl <a class="trait" href="trait.Protocol.html" title="trait karyon_p2p::protocol::Protocol">Protocol</a> for <a class="struct" href="../protocols/ping/struct.PingProtocol.html" title="struct karyon_p2p::protocols::ping::PingProtocol">PingProtocol</a></h3></section></div><script src="../../implementors/karyon_p2p/protocol/trait.Protocol.js" async></script></section></div></main></body></html>

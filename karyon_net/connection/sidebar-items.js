@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"fn":["dial"],"trait":["Connection","ToConn"],"type":["Conn"]};

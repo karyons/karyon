@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"enum":["KeyPair","KeyPairType","PublicKey"],"struct":["Ed25519KeyPair","Ed25519PublicKey","SecretKey"],"trait":["KeyPairExt","PublicKeyExt"]};

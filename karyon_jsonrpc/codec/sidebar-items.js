@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"constant":["DEFAULT_BUFFER_SIZE","DEFAULT_MAX_ALLOWED_BUFFER_SIZE"],"struct":["Codec","CodecConfig"]};

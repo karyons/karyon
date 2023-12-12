@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"constant":["MAX_FAILURES","PINGMSG_SIZE"],"struct":["PingMsg","PongMsg","RefreshService"]};

@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"constant":["JSONRPC_VERSION"],"enum":["Endpoint","JsonRPCError"],"macro":["register_service"],"mod":["client","codec","error","message","server","service"],"struct":["Client","ClientConfig","CodecConfig","Server","ServerConfig"],"trait":["RPCService"],"type":["RPCMethod"]};

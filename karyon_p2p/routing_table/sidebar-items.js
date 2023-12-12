@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"constant":["DISTANCE_LIMIT","MAX_MATCHED_SUBNET_IN_BUCKET","MAX_MATCHED_SUBNET_IN_TABLE","TABLE_SIZE"],"enum":["AddEntryResult"],"fn":["subnet_match"],"mod":["bucket","entry"],"struct":["RoutingTable"]};

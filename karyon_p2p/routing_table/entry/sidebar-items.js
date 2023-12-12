@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"constant":["KEY_SIZE"],"fn":["xor_distance"],"struct":["Entry"],"type":["Key"]};
